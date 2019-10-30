@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>blog.utf8.md</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Haojia Li</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="blog.html">Blog</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/hal4006">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/HaojiaLi3">
+    <span class="fa fa-twitter fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="mailto:&lt;hal4006@med.cornell.edu&gt;">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><link rel="stylesheet" href="styles.css" type="text/css"></p>
+<div id="principles-examples-figure-design" class="section level2">
+<h2>Principles &amp; Examples: Figure Design</h2>
+<p>Data visualization is part art and part science. The challenge is to get the art right without getting the science wrong and vice versa. A data visualization first and foremost has to accurately convey the data. It must not mislead or distort. At the same time, a data visualization should be aesthetically pleasing. Good visual presentations tend to enhance the message of the visualization. If a figure contains jarring colors, imbalanced visual elements, or other features that distract, then the viewer will find it harder to inspect the figure and interpret it correctly.</p>
+<p>Here are some of the fundameantal design principles for creating informational and appealing data visualizations with examples.</p>
+<p>Before start, the following R packages are supposed to be loaded.</p>
+<pre class="r"><code>library(tidyverse)
+library(ggplot2)</code></pre>
+<div id="a.-follow-the-principle-of-proportional-ink." class="section level3">
+<h3>A. Follow the principle of proportional ink.</h3>
+<p>The principle of proportional ink emphasizes that <strong>the sizes of shaded areas in a visualization need to be proportional to the data values they represent</strong>. This concept was termed by <a href="https://callingbullshit.org/tools/tools_proportional_ink.html">Bergstrom and West</a>.</p>
+<p>In many different visualization scenarios, we represent data values by the extent of a graphical element. For example, in a bar plot, we draw bars that begin at 0 and end at the data value they represent. In this case, the data value is not only encoded in the end point of the bar but also in the height or length of the bar. If we drew a bar that started at a different value than 0, then the length of the bar and the bar endpoint would convey contradicting information.</p>
+<p>For example, when we investigate the <a href="https://usatodayhss.com/2017/relative-age-effect-is-when-you-are-born-more-important-than-how-good-you-will-be">Relative Age Effect</a> in baseball players who batted during the decade of the 2000s, we can make a bar chart to visualize the birth month distribution.</p>
+<pre class="r"><code>library(Lahman)
+Batting %&gt;%
+  # Filter players batted during the decade of the 2000s.
+  filter(yearID %in% 2000:2009) %&gt;%
+  # Join datasets to get the birth months of the players.
+  inner_join(Master, by = c(&quot;playerID&quot; = &quot;playerID&quot;)) %&gt;%
+  # Calculate the number of players born in each month.
+  group_by(birthMonth) %&gt;%
+  summarise(n = n()) %&gt;%
+  # Create a ggplot.
+  ggplot() +
+  # We may set the argument stat in geom_bar as &quot;identity&quot; because the frequency has been calculated.
+  geom_bar(aes(as.factor(birthMonth),n), stat = &quot;identity&quot;, fill = &quot;sky blue&quot;) +
+  # Add another start line, y = 500.
+  geom_abline(intercept = 500, lty = 2) +
+  # Add the line chart for the same data
+  geom_line(aes(x=birthMonth,y=n)) +
+  xlab(&quot;Birth Month&quot;) +
+  ylab(&quot;Number of Athletes&quot;) +
+  ggtitle(&quot;Distribution of Birth Months in 2000s Decades&quot;) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 8), 
+        axis.title = element_text(size = 10), 
+        plot.title = element_text(size = 12, hjust = 0.5),
+        legend.position = &quot;none&quot;)</code></pre>
+<p><img src="blog_files/figure-html/unnamed-chunk-3-1.png" width="720" /></p>
+<p>The months following August have higher numbers of players than months prior to July, which is clearly shown in the bar chart. So there is a relative age effect in this observed group. But if the start line is 500 instead of 0, things may get exaggerated.</p>
+<p>Just focus on the comparison between the numbers of athletes in July and August. When the start line is 0, the number of players born in July is about <strong>2/3</strong> of that in August. However, if the start line is 500, the height of the bar for July above 500 will be <strong>1/2</strong> of that for August, and this will lead to overestimation of the relative age effect.</p>
+<p>Therefore, we must always keep in mind that a bar chart should start at 0 to ensure the objectiveness of the comparison.</p>
+<p>However, if we are focused on the trend of time series more than value comparison, a line chart will make better sense, which, in my opinion, will be less affected by the start line. But a graphic containing only one line is simple and dull, so I suggest that a line be combined with other lines or other types of charts.</p>
+</div>
+<div id="b.-handle-overlapping-points." class="section level3">
+<h3>B. Handle overlapping points.</h3>
+<p>When we want to visualize large or very large datasets, we often experience the challenge that simple x–y scatter plots do not work very well because many points lie on top of each other and partially or fully overlap. And similar problems can arise even in small datasets if data values were recorded with low precision or rounded, such that multiple observations have exactly the same numeric values. The technical term commonly used to describe this situation is “overplotting”, i.e., plotting many points on top of each other.</p>
+<p>The essential strategies that we may pursue when encountering this challenge are: <strong>partial transparency</strong>, <strong>logarithmic transform</strong> and <strong>facet wrap</strong>.</p>
+<p>Let’s see the Violations data set in the mdsr package contains information reguarding the outcome of health inspections of restaurants in New York City. We calculate the median violation score by zip code for zip codes with 50 or more inspections and want to see the pattern between the number of inspections and the median score for each borough in New York City.</p>
+<pre class="r"><code>library(mdsr)
+g &lt;- Violations %&gt;%
+  # Remove the records of which the borough is missing.
+  filter(boro != &quot;Missing&quot;) %&gt;%
+  group_by(boro, zipcode) %&gt;%
+  # Calculate the number of inspections and the median score.
+  summarise(inspect_times = n(),
+            median_score = median(score, na.rm = T)) %&gt;%
+  # Filter zip codes with 50 or more inspections.
+  filter(inspect_times &gt;= 50) %&gt;%
+  # Create a ggplot and set the labs and themes.
+  ggplot() +
+  xlab(&quot;Number of Inspections&quot;) +
+  ylab(&quot;Median Score&quot;) +
+  ggtitle(&quot;Health Inspection Median Scores of Restaurants in NYC&quot;) +
+  theme_bw() +
+  theme(axis.text = element_text(size = 8), 
+        axis.title = element_text(size = 10), 
+        plot.title = element_text(size = 12, hjust = 0.5))
+# Draw the basic scatter plot identify each borough by giving it its own color.
+g + geom_point(aes(x = inspect_times, y = median_score, col = boro)) + labs(col = &quot;Borough&quot;)</code></pre>
+<p><img src="blog_files/figure-html/unnamed-chunk-4-1.png" width="720" /></p>
+<p>You may find that the scatter plot above has many overlapping points in the interval between 0 inspections to 5000. Even though the points are colored, it is still hard to tell different boroughs in the plot. So we may improve this graphic as follow.</p>
+<pre class="r"><code>g +
+  # First, we may adjust the transparency of the points by set alpha to 0.5.
+  geom_point(aes(x = inspect_times, y = median_score, col = boro, alpha = .5)) +
+  xlab(&quot;Log10 Number of Inspections&quot;) +
+  # Second, we can rescale the number of inspections by logarithmic calculation.
+  scale_x_continuous(trans = &quot;log10&quot;) +
+  # Finally, we can facet wrap to separate the boroughs.
+  facet_wrap(~boro, nrow = 2) +
+  theme(legend.position = &quot;none&quot;)</code></pre>
+<p><img src="blog_files/figure-html/unnamed-chunk-5-1.png" width="720" /></p>
+</div>
+<div id="c.-pay-attention-to-title-axis-and-lengend." class="section level3">
+<h3>C. Pay attention to title, axis and lengend.</h3>
+<p>A data visualization is not a piece of art meant to be looked at only for its aesthetically pleasing features. Instead, its purpose is to convey information and make a point. To reliably achieve this goal when preparing visualizations, we have to place the data into context and provide accompanying titles and other annotations.</p>
+<p>One critical component of every figure is the figure title. Every figure needs the title. The job of the title is to accurately convey to the reader what the figure is about, what point it makes.</p>
+<p>Axis and legend titles and labels explain what the displayed data values are and how they map to plot aesthetics. There are cases, however, when axis or legend titles can be omitted, namely when the labels themselves are fully explanatory. For example, a legend showing two differently colored dots labeled “female” and “male” clearly indicates that color encodes sex, then title “sex” is not required to clarify this fact.</p>
+<p>Apart from the content, we must also keep the visual readability of the graphic by setting size, angle, and so on in the themes.</p>
+<p>Let’s make a single plot with boxplots of the average medicare payments by DRG code.</p>
+<pre class="r"><code>library(readr)
+# Load the original DRG data set.
+DRG &lt;- read_csv(&quot;files/DRG_data.csv&quot;)
+# Draw the simplist (and the ugliest) boxplot.
+DRG %&gt;%
+  ggplot(aes(x = `DRG Definition`, y = `Average Medicare Payments`)) +
+  geom_boxplot()</code></pre>
+<p><img src="blog_files/figure-html/unnamed-chunk-6-1.png" width="720" /></p>
+<p>You may find that there are so many outliers for each DRG that the boxes are compressed. Besides, the content on the x-axis is not readable because of the massive overlap. So we may improve this graphic as follow.</p>
+<pre class="r"><code># Create the variable DRG.code to simplify DRG Definition.
+DRG &lt;- DRG %&gt;%
+  mutate(DRG.code = substr(`DRG Definition`,1,3)) %&gt;%
+  select(DRG.code, everything())
+# Improve this graphic!
+DRG %&gt;%
+  ggplot() +
+  # Set DRG.code as x instead of DRG Definition. Omit the outliers by set outlier.shape to NA.
+  geom_boxplot(aes(x = DRG.code, y = `Average Medicare Payments`), outlier.shape = NA) +
+  # Rescale y to spread the boxplots.
+  scale_y_continuous(trans = &quot;log10&quot;) +
+  xlab(&quot;DRG Code&quot;) +
+  ylab(&quot;Average Medicare Payments ($)&quot;) +
+  ggtitle(&quot;Average Medicare Payments by DRG codes&quot;) +
+  theme_bw() +
+  # Set the particular size and angle for the x-axis to avoid overlap.
+  theme(axis.text.x = element_text(size = 6, angle = 90),
+        axis.text.y = element_text(size = 8), 
+        axis.title = element_text(size = 10), 
+        plot.title = element_text(size = 12, hjust = .5))</code></pre>
+<p><img src="blog_files/figure-html/unnamed-chunk-7-1.png" width="720" /></p>
+</div>
+<div id="d.-use-color-properly." class="section level3">
+<h3>D. Use color properly.</h3>
+<p>Color can be an incredibly effective tool to enhance data visualizations. At the same time, poor color choices can ruin an otherwise excellent visualization. Color needs to be applied to serve a purpose, it must be clear, and it must not distract.</p>
+<p>One common mistake is trying to give color a job that is too big for it to handle, by encoding too many different items in different colors. As a rule of thumb, qualitative color scales work best when there are three to five different categories that need to be colored. Once we reach eight to ten different categories or more, the task of matching colors to categories becomes too burdensome to be useful, even if the colors remain sufficiently different to be distinguishable in principle.</p>
+<p>Reading the news that <a href="https://www.theguardian.com/environment/2018/jul/12/ireland-becomes-worlds-first-country-to-divest-from-fossil-fuels">Ireland becomes world’s first country to divest from fossil fuels</a>, we want to explore how do we measure “green-ness” of country when we rank them in general with the <a href="https://epi.envirocenter.yale.edu/epi-topline">Environmental Performance Index</a> page with ranking table.</p>
+<p>So let’s make the simple plot of Environmental Health vs Ecosystem Vitality first.</p>
+<pre class="r"><code>library(knitr)
+library(rvest)
+epi_2018_site &lt;- read_html(&quot;https://epi.envirocenter.yale.edu/epi-topline&quot;)
+epi_2018_df &lt;- epi_2018_site %&gt;% html_table() %&gt;% as.data.frame()
+epi_2018_df %&gt;% ggplot(aes(x=Environmental.Health , y= Ecosystem.Vitality)) +
+  geom_point(aes(color=Country)) +
+  theme_bw() +
+  theme(legend.position = &quot;none&quot;,
+        axis.text.y = element_text(size = 8), 
+        axis.title = element_text(size = 10), 
+        plot.title = element_text(size = 12, hjust = .5)) +
+  labs(title = &quot;Environmental Health vs Ecosystem Vitality&quot;,
+       x = &quot;Rises with Economic Growth &amp; Prosperity&quot;,
+       y = &quot;Comes Under Strain from Industrialization &amp; Urbanization&quot;)</code></pre>
+<p><img src="blog_files/figure-html/unnamed-chunk-8-1.png" width="720" /></p>
+<p>You may find that there are too manu colors in the graphic but actually this does not make sense. Then we may make the improvement.</p>
+<pre class="r"><code>epi_2018_df &lt;- epi_2018_df %&gt;%
+  # Switch countries to continents.
+  mutate(continent = countrycode(Country ,&quot;country.name&quot;, &quot;continent&quot;, warn=F)) %&gt;%
+  arrange(EPI.Ranking)
+epi_2018_df %&gt;%
+  ggplot(aes(x=Environmental.Health , y= Ecosystem.Vitality)) +
+  # Color by continent.
+  geom_point(aes(color = continent)) +
+  # Add smooth line to show the association.
+  geom_smooth(method=&quot;lm&quot;, se=F, color = &quot;black&quot;) +
+  theme_bw() +
+  theme(legend.position = &quot;none&quot;,
+        axis.text.y = element_text(size = 8), 
+        axis.title = element_text(size = 10), 
+        plot.title = element_text(size = 12, hjust = .5)) +
+  labs(title = &quot;Environmental Health vs Ecosystem Vitality&quot;,
+       x = &quot;Rises with Economic Growth &amp; Prosperity&quot;,
+       y = &quot;Ecosystem Vitality&quot;) +
+  # Add repels to label better.
+  geom_text_repel(aes(label=paste0(EPI.Ranking,&quot;.&quot;,Country)), 
+                  data = . %&gt;% 
+                    filter(EPI.Ranking&lt;=10|EPI.Ranking&gt;=170|Country %in%
+                             c(&quot;Canada&quot;,&quot;United States of America&quot;,&quot;Japan&quot;,&quot;Ireland&quot;)),
+                  size = 3, color = &quot;darkgrey&quot;)</code></pre>
+<p><img src="blog_files/figure-html/unnamed-chunk-9-1.png" width="720" /></p>
+<p>To learn more about the color palettes in R, you may refer to <a href="files/colorPaletteCheatsheet.pdf">colorPaletteCheatsheet</a></p>
+</div>
+<div id="references" class="section level3">
+<h3>References:</h3>
+<p>Fundamentals of Data Visualization <a href="https://serialmentor.com/dataviz/color-pitfalls.html" class="uri">https://serialmentor.com/dataviz/color-pitfalls.html</a></p>
+<p>Environmental Performance Index – Simple Scatter Plot <a href="https://www.r-bloggers.com/environmental-performance-index-simple-scatter-plot/" class="uri">https://www.r-bloggers.com/environmental-performance-index-simple-scatter-plot/</a></p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
