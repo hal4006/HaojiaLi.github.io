@@ -1,0 +1,12 @@
+---
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<img src="images/HaojiaLi.jpg" style="width:20%; border:5px solid; margin-right: 30px" align="left">
+
+I am a current graduate student in the [Biostatistics & Data Science](https://hpr.weill.cornell.edu/graduate-education-clinical-training/masters-track/biostatistics-data-science) track in the [Healthcare Policy & Research Department](https://hpr.weill.cornell.edu/) at [Weill Cornell Medicine](https://weill.cornell.edu/). 
+
+I am skilled in R programming. Before my study in WCM, I had been a part-time research assistant at [Chinese Academy of Sciences](http://english.cas.cn/) for two months in the undergraduate period. During my internship, I analyzed the association between breast cancer and single-nucleotide polymorphisms (SNPs) using the machine learning method multifactor dimensionality reduction (MDR).
+
+My full resume is available [here](files/HaojiaLi_Resume.pdf).

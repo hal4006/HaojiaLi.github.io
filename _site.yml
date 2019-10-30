@@ -1,0 +1,18 @@
+name: "Haojia Li"
+output_dir: "."
+navbar:
+  title: "Haojia Li"
+  left:
+    - text: "Blog"
+      href: blog.html
+  right:
+    - icon: fa-github fa-lg
+      href: https://github.com/hal4006
+    - icon: fa-twitter fa-lg
+      href: https://twitter.com/HaojiaLi3
+    - icon: fa-envelope fa-lg
+      href: mailto:<hal4006@med.cornell.edu>
+output:
+  html_document:
+    theme: paper
+    css: 'styles.css'
